@@ -35,18 +35,27 @@ class Employee:
         else: self.salary = 10_000 
     
     def change_city(self, new_city:str) -> bool:
-        # Change the city 
+        old_city = self.city
+        self.city = new_city
+        if self.city == new_city && self.city != old_city:
+            return true
+        else:
+            return false
         # Return true if city change, successful, return false if city same as old city
-        pass
 
     def migrate_branch(self, new_code:int) -> bool:
+        if len(self.branches) == 1:
+            if branchmap[branches[0]][city] == branchmap[new_code][city]:
+                self.branches[0] = new_code
+            else:
+                return false
         # Should work only on those employees who have a single 
         # branch to report to. Fail for others.
         # Change old branch to new if it is in the same city, else return false.
-        pass
 
     def increment(self, increment_amt: int) -> None:
-        # Increment salary by amount specified.
+        self.salary += increment_amt
+        # Increment salary by amount specified
         pass
 
 
