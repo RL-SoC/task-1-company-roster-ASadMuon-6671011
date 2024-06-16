@@ -69,7 +69,8 @@ class Engineer(Employee):
                  branchcodes, position= "Junior", salary = None):
         # Call the parent's constructor
         super().__init__(name, age, ID, city, branchcodes, salary)
-        
+        if position in ['Junior','Senior','Team Lead','Director']:
+            self.position = position
         # Check if position is one of  "Junior", "Senior", "Team Lead", or "Director" 
         # Only then set the position. 
 
