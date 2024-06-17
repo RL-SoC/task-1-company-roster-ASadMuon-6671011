@@ -124,7 +124,8 @@ class Salesman(Employee):
         if posListAsc.find(self.position) >= pos:
             return false
         else:
-            
+            self.position = pos
+            increment()
             
 
     def increment(self) -> None:
