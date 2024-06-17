@@ -76,18 +76,23 @@ class Engineer(Employee):
 
     
     def increment(self, amt:int) -> None:
+        self.salary = 
         # While other functions are the same for and engineer,
         # and increment to an engineer's salary should add a 10% bonus on to "amt"
         pass
         
     def promote(self, position:str) -> bool:
+        listOfPositionsAsc = ['Junior','Senior','Team Lead','Director']
+        if listOfPositionsAsc.find(position) <= listOfPositionsAsc.find(self.position):
+            return false
+        else:
+            self.position = position
+            increment(0.3*self.salary)
+            return true
         # Return false for a demotion or an invalid promotion
         # Promotion can only be to a higher position and
         # it should call the increment function with 30% of the present salary
         # as "amt". Thereafter return True.
-        pass
-
-
 
 class Salesman(Employee):
     """ 
@@ -104,8 +109,10 @@ class Salesman(Employee):
     # An extra member variable!
     superior : int # EMPLOYEE ID of the superior this guy reports to
 
-    def __init__(self, ): # Complete all this! Add arguments
-        pass
+    def __init__(self, sup): # Complete all this! Add arguments
+        super().__init__()
+        self.superior = sup
+        
     
     # def promote 
 
