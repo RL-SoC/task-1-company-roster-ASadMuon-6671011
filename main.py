@@ -16,22 +16,23 @@ if __name__ == "__main__":  # Equivalent to int main() {} in C++.
             name = input("Name:")
             ID = input("ID:")
             city = input("City:")
-            branchcodes = input("Branch(es):")
+            branchcodes = list(int(i) for i in input("Branch(es):").split(','))
             # How will you conver this to a list, given that
             # the user will always enter a comma separated list of branch codes?
             # eg>   2,5
 
             salary = input("Salary: ")
             # Create a new Engineer with given details.
-            engineer = None # Change this
+            engineer = Engineer(name,ID,city,branchcodes,salary) # Change this
 
             engineer_roster.append(engineer) # Add him to the list! See people.py for definiton
             
         
         elif last_input == 2:
+            sales_roster.append(salesdude)
             # Gather input to create a Salesperson
             # Then add them to the roster
-            pass
+
 
         elif last_input == 3:
             ID = int(input("ID: "))
@@ -58,11 +59,12 @@ if __name__ == "__main__":  # Equivalent to int main() {} in C++.
                 print(f"Salary: {found_employee.salary}")
 
         elif last_input == 4:
+            
             #### NO IF ELSE ZONE ######################################################
             # Change branch to new branch or add a new branch depending on class
             # Inheritance should automatically do this. 
             # There should be no IF-ELSE or ternary operators in this zone
-            pass
+            
             #### NO IF ELSE ZONE ENDS #################################################
 
         elif last_input == 5:
