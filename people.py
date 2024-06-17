@@ -109,27 +109,46 @@ class Salesman(Employee):
     # An extra member variable!
     superior : int # EMPLOYEE ID of the superior this guy reports to
 
-    def __init__(self, sup): # Complete all this! Add arguments
-        super().__init__()
-        self.superior = sup
+    def __init__(self,name,age,ID,city,\branchcodes,salary,position,sup): # Complete all this! Add arguments
+        super().__init__(self,name,age,ID,city,\
+                        branchcodes,salary)
+        if position in ['Rep','Manager','Head']:
+            self.position = position
+        if self.position != 'Head':
+            self.superior = sup
+        else:
+            self.superior = None
         
-    
-    # def promote 
+    def promote(self,pos) -> bool:
+        posListAsc = ['Rep','Manager','Head']
+        if posListAsc.find(self.position) >= pos:
+            return false
+        else:
+            
+            
 
-    # def increment 
-
-    def find_superior(self) -> tuple[int, str]:
-        # Return the employee ID and name of the superior
-        # Report a tuple of None, None if no superior.
+    def increment(self) -> None:
         pass
 
+    def find_superior(self) -> tuple[int, str]:
+        if self.superior != None:
+            for i in sales_roster:
+                if i.ID == self.superior:
+                    return (i.ID,i.name)
+        else:
+            return (None,None)
+        # Return the employee ID and name of the superior
+        # Report a tuple of None, None if no superior.
+
     def add_superior(self) -> bool:
+        
         # Add superior of immediately higher rank.
         # If superior doesn't exist return false,
         pass
 
 
     def migrate_branch(self, new_code: int) -> bool:
+        
         # This should simply add a branch to the list; even different cities are fine
         pass
 
